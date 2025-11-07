@@ -54,7 +54,7 @@ optional = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["."]
+where = [".", "projects/rtmpose3d"]
 exclude = ["configs", "tools", "demo"]
 
 [tool.setuptools.package-data]

@@ -1,4 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+from importlib.metadata import version
+
 import mmcv
 import torch
 import torch.nn as nn
@@ -174,9 +176,9 @@ class PoseWarperNeck(nn.Module):
         self.offset_layers = nn.ModuleList(offset_layers)
 
         # build deformable conv layers
-        assert digit_version(mmcv.__version__) >= \
+        assert digit_version(version("mmcv")) >= \
             digit_version(self.minimum_mmcv_version), \
-            f'Current MMCV version: {mmcv.__version__}, ' \
+            f'Current MMCV version: {version("mmcv")}, ' \
             f'but MMCV >= {self.minimum_mmcv_version} is required, see ' \
             f'https://github.com/open-mmlab/mmcv/issues/1440, ' \
             f'Please install the latest MMCV.'

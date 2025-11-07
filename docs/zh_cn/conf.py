@@ -11,6 +11,8 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
+from importlib.metadata import version
+
 import os
 import subprocess
 import sys
@@ -24,18 +26,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 project = 'MMPose'
 copyright = '2020-2021, OpenMMLab'
 author = 'MMPose Authors'
-
-# The full version, including alpha/beta/rc tags
-version_file = '../../mmpose/version.py'
-
-
-def get_version():
-    with open(version_file, 'r') as f:
-        exec(compile(f.read(), version_file, 'exec'))
-    return locals()['__version__']
-
-
-release = get_version()
+release = version("mmpose")
 
 # -- General configuration ---------------------------------------------------
 

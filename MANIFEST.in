@@ -1,3 +1,4 @@
+include model-index.yml
 include requirements/*.txt
 include mmpose/.mim/model-index.yml
 include mmpose/.mim/dataset-index.yml
